@@ -1,0 +1,15 @@
+{% extends 'tv_models/main.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1>Searching</h1>
+<form method="get">
+{{ filter.form|crispy }}
+    <button class="big-btn">search</button>
+    </form>
+    <ul>
+        {% for item in filter.qs %}
+        <li><a class="model-title" href="{% url 'tv_models-tvmodel_detail' item.id %}">{{ item.title }}</a></li>
+    </ul>
+        {% endfor %}
+{% endblock %}

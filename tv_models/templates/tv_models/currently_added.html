@@ -1,0 +1,20 @@
+{% extends "tv_models/main.html" %}
+{% block content %}
+<h2>TV in list - ({{model|length}})</h2>
+<div class="TV-wrapper">
+    {% for item in model %}
+    <div class="TV-item">
+        <p> name - {{item.title}}</p>
+        <p> hdr - {{item.hdr}}</p>
+        <p> screen size - {{item.screen_size}}</p>
+        <p> OS - {{item.system_os}}</p>
+        <p> model year - {{item.model_year}}</p>
+        <p> UHD - {{item.UHD}}</p>
+        <p> describe - {{item.content}}</p>
+    </div>
+    <hr>
+    {% endfor %}
+
+</div>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends "tv_models/main.html" %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <h2 class="model-title">model-{{ object.title }}</h2>
+        <p class="model-content"> screen-{{ object.screen_size }}</p>
+        <p class="model-content">OS-{{ object.system_os }}</p>
+        <p class="model-content">Screen Resolution-{{ object.resolution }}</p>
+        <p class="model-content">HDR-{{ object.hdr }}</p>
+        <p class="model-content">Year-{{ object.model_year }}</p>
+        <p class="model-content">Describe-{{ object.content }}</p>
+        <p class="model-content">manual - <a  href="{{object.manual}}"></a></p>
+    </div>
+</article>
+
+{% endblock content %}
