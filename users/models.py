@@ -4,7 +4,6 @@ from PIL import Image
 
 
 # Create your models here.
-
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     city = models.TextField(max_length=10)
