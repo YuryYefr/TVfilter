@@ -7,6 +7,7 @@ class TVModel(models.Model):
         ('32', '32'),
         ('40', '40'),
         ('43', '43'),
+        ('49', '49'),
         ('55', '55'),
     )
     Year = (('2018', '2018'),
@@ -27,7 +28,7 @@ class TVModel(models.Model):
     hdr = models.CharField(max_length=3, choices=HDR)
     system_os = models.CharField(max_length=8, choices=OS)
     content = models.TextField(max_length=255, default='Describe key features')
-    manual = models.URLField(verbose_name='here lies url', default='url')
+    manual = models.URLField(verbose_name='here lies url', blank=True)
     objects = models.Manager()
 
     def __str__(self):

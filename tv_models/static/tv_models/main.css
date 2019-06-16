@@ -86,3 +86,9 @@ a.article-title:hover {
   height: 40px;
   width: 110px
 }
+.manual-btn{
+    height: 20;
+    width: 40;
+    background-color: black;
+
+}
