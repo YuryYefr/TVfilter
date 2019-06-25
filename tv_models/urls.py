@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
 from .views import TVDetail, TVList, FilterList
-# from .views import  TVmodelCreate
 urlpatterns = [
     path('', TVList.as_view(), name='tv_models-home'),
     path('about/', views.about, name='tv_models-about'),
