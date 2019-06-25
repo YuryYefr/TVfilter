@@ -1,27 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import TVModel
-from django.views.generic import DetailView as DV, ListView as LV, CreateView as CW
+from django.views.generic import DetailView as DV, ListView as LV
 from .filter import TVfilter
-
-
-# Create your views here.
-# just reserve
-# def home(request):
-#     ctx = {}
-#     ctx['model'] = TVModel.objects.all()
-#     return render(request, 'tv_models/home.html', ctx)
 
 
 def about(request):
     return render(request, 'tv_models/about.html')
-
-
-# def tv_list(request):
-#     content = {}
-#     content['model'] = TVModel.objects.all()
-#     content['current_tab'] = 'main'
-#     return render(request, 'tv_models/currently_added.html', content)
 
 
 class TVList(LV):
@@ -47,23 +32,4 @@ class TVDetail(DV):
     """detailed view of every model"""
     model = TVModel
 
-# def search(request):
-#     ctx = {}
-#     if request.method == 'GET':
-#         try:
-#             q = request.GET.get('query')
-#             ctx['model'] = TVModel.objects.filter(screen_size=q)
-#             ctx['select'] = TVModel.S_SIZE
-#             ctx['q'] = [elem[1] for elem in TVModel.S_SIZE if elem[0] == q][0]
-#         except Exception as e:
-#             ctx['model'] = TVModel.objects.all()
-#         return render(request, 'tv_models/home.html', ctx)
 
-# maybe in future
-# class TVmodelCreate(LoginRequiredMixin, CW):
-#     model = TVModel
-#     fields = ['title', 'model_year', 'screen_size', 'resolution', 'hdr', 'system_os', 'content']
-#
-#     def create_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
