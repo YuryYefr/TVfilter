@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 # Create your models here.
 class TVModel(models.Model):
     S_SIZE = (
@@ -19,7 +20,6 @@ class TVModel(models.Model):
     OS = (('Tizen', 'Tizen'),
           ('Orsay', 'Orsay'),)
     RESOLUTION = (('FHD', 'FHD'), ('UHD', 'UHD'))
-
 
     title = models.CharField(max_length=15)
     model_year = models.CharField(max_length=4, choices=Year)
